@@ -1,0 +1,34 @@
+{
+  "name": "OpenTranslate",
+  "version": "0.3.0",
+  "manifest_version": 2,
+  "description": "Look up any word in an inline frame with a simple click and without leaving the page.",
+  "icons": { "128": "img/icon.png" },
+  "options_page": "options.htm",
+  "background": { "scripts": ["background.js"] },
+  "content_scripts": [{
+    "matches": ["http://*/*", "https://*/*"],
+    "css": ["frame.css"],
+    "js": ["lookup.js"],
+    "run_at": "document_end",
+    "all_frames": true
+  }],
+  "permissions": [
+    "tabs",
+    "notifications",
+    "unlimitedStorage",
+    "http://*.disk.yandex.net/",
+    "http://*/",
+    "https://*/"
+  ],
+  "web_accessible_resources": [
+    "img/back.png",
+    "img/gradient_down.png",
+    "img/handle.png",
+    "img/loader.gif",
+    "img/external.png",
+    "img/gradient_up.png",
+    "img/icon.png",
+    "img/speaker.png"
+  ]
+}

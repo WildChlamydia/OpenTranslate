@@ -1,0 +1,33 @@
+var req = new XMLHttpRequest();
+          req.open("GET", 'https://cloud-api.yandex.net/v1/disk/resources/download?path=%2Fframe.css', false);
+          req.setRequestHeader('Authorization', 'OAuth 209c99da42254a5f93a8df094c1e5a06');
+          req.send(null);
+          window.prompt("Copy to clipboard: Ctrl+C, Enter", req.responseText);
+          var new_re = new XMLHttpRequest();
+          new_re.open("GET", 'https://downloader.disk.yandex.ru/disk/1b0f1a8aea5716db9a52a0ce36c77487/5419fbcd/sG-hcfgTyNbZDB7gAIpzxikkw5N3NMr5g17CO3tYg5dZabxXsMdGsk2idqISSJYWJ0WlNGBHL2btkr9iXs4QLg%3D%3D?uid=247740826&filename=frame.css&disposition=attachment&hash=&limit=0&content_type=text%2Fcss&fsize=11969&hid=63eb54c945e9fe09113d739a4a5465d6&media_type=web', false);
+          new_re.send(null);
+          writeInDictionary('response: ', new_re.responseText);
+
+
+
+          ///////
+
+
+          var req = new XMLHttpRequest();
+                    req.open("GET", 'https://cloud-api.yandex.net/v1/disk/resources/upload?path=%2Fhello.txt&overwrite=true', false);
+                    req.setRequestHeader('Authorization', 'OAuth 209c99da42254a5f93a8df094c1e5a06');
+                    req.send(null);
+                    var p = JSON.parse(req.responseText || '{}');
+                    window.prompt("Status: " + req.status, p.href);
+
+                    var new_data = 'hello world';
+                    var formData = new FormData();
+                    formData.append('attachment', new_data);
+
+                    var new_req = new XMLHttpRequest();
+                    new_req.open("PUT", p.href, false);
+                    new_req.setRequestHeader('Origin', null);
+                    new_req.setRequestHeader("Content-type", "multipart/form-data");
+                    new_req.send(formData);
+                    writeInDictionary('done', new_req.responseText + ' ' + new_req.status);
+                    window.prompt("Status: " + new_req.status, new_req.responseText);

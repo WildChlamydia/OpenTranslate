@@ -1,0 +1,282 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <title> Настройки OpenTranslate</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <script type="text/javascript" src="options.js"></script>
+    <style type="text/css">
+        body {
+            font-family: Arial, Tahoma, sans-serif;
+            margin-top: 0px;
+            padding-top: 0px;
+        }
+        h1 {
+            margin-top: 0px;
+            color: #F8F8FF;
+            background-image: -webkit-gradient(linear, left top, left bottom, from(#58a0e3), to(#65c1ff));
+            border-radius: 0px 0px 10px 10px;
+            padding: 5px 10px;
+            text-shadow: rgba(0, 0, 0, 0.3) 0px -1px 1px;
+            font-size: 150%;
+            text-align: center;
+            -webkit-box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 5px;
+        }
+        label {
+            float: left;
+            width: 20em;
+            padding-right: 20px;
+            text-align: right;
+        }
+        div.field {
+            padding-top: 5px;
+        }
+        #container {
+            margin: auto;
+            width: 600px;
+            margin-top: 0px;
+            padding-top: 0px;
+        }
+        #saveStatusMessage {
+            display: block;
+            position: fixed;
+            top: 45%;
+            left: 0px;
+            text-align: center;
+            color: white;
+            font-weight: bold;
+            text-shadow: rgba(0, 0, 0, 0.2) 0px -1px 1px;
+            background-image: -webkit-gradient(linear, left top, left bottom, from(#65c1ff), to(#58a0e3));
+            border: 1px #58a0e3 solid;
+            border-radius: 0px 15px 15px 0px;
+            padding: 10px 20px;
+            opacity: 0;
+            -webkit-transition: opacity 1.5s ease;
+            -webkit-box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 5px;
+        }
+        fieldset {
+            background: #EDF4F6;
+            border: 1px #CCC solid;
+            border-radius: 0px;
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            -webkit-box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 5px;
+        }
+        legend {
+            background: #EDF4F6;
+            border: 1px #CCC solid;
+            padding: 5px 10px;
+            text-shadow: rgba(0, 0, 0, 0.2) 0px -1px 1px;
+            color: #777;
+            font-size: 110%;
+        }
+        input, select {
+            margin-left: 0px;
+        }
+        input[type=text] {
+            width: 2.25em;
+        }
+        input[type=big_text] {
+            width: 16.5em;
+        }
+        input[type=auth_text] {
+            width: 10.5em;
+        }
+        input[type=button] {
+            display: block;
+            position: fixed;
+            top: 45%;
+            right: -2px;
+            text-align: center;
+            color: white;
+            font-weight: bold;
+            text-shadow: rgba(0, 0, 0, 0.2) 0px -1px 1px;
+            background-image: -webkit-gradient(linear, left top, left bottom, from(#65c1ff), to(#58a0e3));
+            border: 1px #58a0e3 solid;
+            border-right: none;
+            border-radius: 15px 0px 0px 15px;
+            padding: 10px 20px;
+            -webkit-transition: opacity 1.5s ease;
+            -webkit-box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 5px;
+
+            cursor: pointer;
+            font-size: 120%;
+            font-weight: bold;
+        }
+
+        input[type=button]:hover {
+            background-image: -webkit-gradient(linear, left top, left bottom, from(#58a0e3), to(#65c1ff));
+        }
+
+        input[type=button]:active {
+            background-image: -webkit-gradient(linear, left top, left bottom, from(#58a0e3), to(#65c1ff));
+            top: 45.2%;
+            right: -3px;
+        }
+
+        .license {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div id="container">
+    <h1>Настройки OpenTranslate</h1>
+    <fieldset>
+        <legend>Основное</legend>
+        <div class="field">
+            <label for="clickModifier">Модификатор поиска мышью:</label>
+            <select id="clickModifier">
+                <option value="None">None</option>
+                <option value="Ctrl">Ctrl</option>
+                <option value="Alt">Alt</option>
+                <option value="Meta">Command (Mac)</option>
+                <option value="Ctrl+Alt">Ctrl+Alt</option>
+            </select>
+        </div>
+        <div class="field">
+            <label for="hideWithEscape">Прятать по нажатию Esc:</label>
+            <input type="checkbox" id="hideWithEscape" />
+        </div>
+    </fieldset>
+    <fieldset>
+        <legend>Ручной ввод</legend>
+        <div class="field">
+            <label for="shortcutEnable">Включить ручной ввод:</label>
+            <input type="checkbox" id="shortcutEnable" />
+        </div>
+        <div class="field">
+            <label for="shortcutModifier">Модификатор:</label>
+            <select id="shortcutModifier">
+                <option value="Ctrl">Ctrl</option>
+                <option value="Alt">Alt</option>
+                <option value="Meta">Command (Mac)</option>
+                <option value="Ctrl+Alt">Ctrl+Alt</option>
+                <option value="Ctrl+Shift">Ctrl+Shift</option>
+                <option value="Alt+Shift">Alt+Shift</option>
+            </select>
+        </div>
+        <div class="field">
+            <label for="shortcutKey">Горячая клавиша:</label>
+            <select id="shortcutKey">
+                <option value="A">A</option>
+                <option value="B">B</option>
+                <option value="C">C</option>
+                <option value="D">D</option>
+                <option value="E">E</option>
+                <option value="F">F</option>
+                <option value="G">G</option>
+                <option value="H">H</option>
+                <option value="I">I</option>
+                <option value="J">J</option>
+                <option value="K">K</option>
+                <option value="L">L</option>
+                <option value="M">M</option>
+                <option value="N">N</option>
+                <option value="O">O</option>
+                <option value="P">P</option>
+                <option value="Q">Q</option>
+                <option value="R">R</option>
+                <option value="S">S</option>
+                <option value="T">T</option>
+                <option value="U">U</option>
+                <option value="V">V</option>
+                <option value="W">W</option>
+                <option value="X">X</option>
+                <option value="Y">Y</option>
+                <option value="Z">Z</option>
+                <option value="`">`</option>
+            </select>
+        </div>
+        <div class="field">
+            <label for="shortcutSelection">Искать выделенное:</label>
+            <input type="checkbox" id="shortcutSelection" />
+        </div>
+    </fieldset>
+    <!Services for search translate>
+    <fieldset>
+        <legend>Яндекс.Перевод</legend>
+        <div class="field">
+            <label for="yandexEnable">Искать в <a href="https://translate.yandex.ru/" target="_blank">Яндекс.Перевод</a>:</label>
+            <input type="checkbox" id="yandexEnable" />
+        </div>
+        <div class="field">
+            <label for="yandexApiKey"><a href="http://api.yandex.ru/key/form.xml?service=trnsl" target="_blank">API ключ</a>:</label>
+            <input type="big_text" id="yandexApiKey" />
+        </div>
+    </fieldset>
+    <fieldset>
+        <legend>MyMemory</legend>
+        <div class="field">
+            <label for="mymemoryEnable">Искать в <a href="http://mymemory.translated.net/" target="_blank">MyMemory</a></label>
+            <input type="checkbox" id="mymemoryEnable" />
+        </div>
+        <div class="field">
+            <label for="mymemoryUserTransEnable">Показывать пользовательский перевод:</label>
+            <input type="checkbox" id="mymemoryUserTransEnable" />
+        </div>
+    </fieldset>
+    <fieldset>
+        <legend>Frengly</legend>
+        <div class="field">
+            <label for="frenqlyEnable">Искать в <a href="http://www.frengly.com/" target="_blank">Frengly</a>:</label>
+            <input type="checkbox" id="frenqlyEnable" />
+        </div>
+        <div class="field">
+            <label for="frenqlyLogin"><a href="http://www.frengly.com/login" target="_blank">Логин</a>:</label>
+            <input type="auth_text" id="frenqlyLogin" />
+        </div>
+        <div class="field">
+            <label for="frenqlyPass">Пароль:</label>
+            <input type="auth_text" id="frenqlyPass" />
+        </div>
+    </fieldset>
+    <!>
+    <fieldset>
+        <legend>Содержимое</legend>
+        <div class="field">
+            <label for="showIPA">Транскрипция (<a href="https://ru.wikipedia.org/wiki/Международный_фонетический_алфавит" target="_blank">IPA</a>):</label>
+            <input type="checkbox" id="showIPA" />
+        </div>
+        <div class="field">
+            <label for="showAudio">Произношение (Аудио):</label>
+            <input type="checkbox" id="showAudio" />
+        </div>
+        <div class="field">
+            <label for="showAudioLinks">Ссылки на аудио-файлы в Викимедиа:</label>
+            <input type="checkbox" id="showAudioLinks" />
+        </div>
+    </fieldset>
+    <fieldset>
+        <legend>Размеры всплывающего окна</legend>
+        <div class="field">
+            <label for="frameWidth">Ширина:</label>
+            <input type="text" id="frameWidth" />
+        </div>
+        <div class="field">
+            <label for="frameHeight">Высота:</label>
+            <input type="text" id="frameHeight" />
+        </div>
+        <div class="field">
+            <label for="queryFormWidth">Ширина формы ручного ввода:</label>
+            <input type="text" id="queryFormWidth" />
+        </div>
+        <div class="field">
+            <label for="saveFrameSize">Запомнить размеры:</label>
+            <input type="checkbox" id="saveFrameSize" />
+        </div>
+    </fieldset>
+    <fieldset>
+        <legend>Лицензия</legend>
+        <div class="field license">
+            Расширение распространяется под лицензией <a href="https://ru.wikipedia.org/wiki/GNU_General_Public_License" target="_blank">GNU GPL</a> и обладает открытым исходным кодом.
+        </div>
+    </fieldset>
+    <input type="button" id="saveOptions" value="Save" />
+    <div id="saveStatusMessage">Status</div>
+</div>
+</body>
+</html>
+
