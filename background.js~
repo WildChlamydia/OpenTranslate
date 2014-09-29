@@ -85,7 +85,7 @@ chrome.extension.onMessage.addListener(function(request, sender, callback) {
       message: request.message,
       priority: 1,
       items: [{ title: request.query, message: request.trans}],
-      iconUrl:'http://www.google.com/favicon.ico'
+      iconUrl:'http://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Blue_exclamation_mark.svg/500px-Blue_exclamation_mark.svg.png'
     };
     chrome.notifications.create('', opt, function(id) {});
   } else if (request.method == 'get_lookup_html') {
