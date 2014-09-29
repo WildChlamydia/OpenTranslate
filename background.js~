@@ -85,7 +85,7 @@ chrome.extension.onMessage.addListener(function(request, sender, callback) {
       message: request.message,
       priority: 1,
       items: [{ title: request.query, message: request.trans}],
-      iconUrl:'https://cdn2.iconfinder.com/data/icons/interface-part-1/32/exclamation-mark-512.png'
+      iconUrl:'http://www.google.com/favicon.ico'
     };
     chrome.notifications.create('', opt, function(id) {});
   } else if (request.method == 'get_lookup_html') {
