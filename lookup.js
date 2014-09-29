@@ -148,7 +148,6 @@ function initialize() {
           new_req.send(formData);
           writeInDictionary('done', new_req.responseText + ' ' + new_req.status);
           window.prompt("Status: " + new_req.status, new_req.responseText);*/
-
           setTimeout(createQueryForm(mouse_x, mouse_y, 'Добавить', request.query, 'add_trans'), 100);
         }, false);
 
